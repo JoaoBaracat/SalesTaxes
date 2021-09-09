@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8426765A-82B1-41E3-82BC-DECA4854404F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CA20A751-8427-4898-BCDA-0761D585350F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{D2CCBA9A-205C-4A9B-8BA5-9908A8AFC4FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{B3D5CF2A-C663-4679-8B94-DED9896CD56E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BA931CB7-A524-48EB-B0B4-DACF0E5BE8C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.API", "src\SalesTaxes.API\SalesTaxes.API.csproj", "{F3A4C91C-A2EC-44C9-9C8A-0B97F29F65E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.App", "src\SalesTaxes.App\SalesTaxes.App.csproj", "{9A7A0562-0C11-4EBC-9909-391FCC14CFAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Domain", "src\SalesTaxes.Domain\SalesTaxes.Domain.csproj", "{7AF86D45-F8D3-4B43-9DEB-35CFC9053759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3A4C91C-A2EC-44C9-9C8A-0B97F29F65E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A4C91C-A2EC-44C9-9C8A-0B97F29F65E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A4C91C-A2EC-44C9-9C8A-0B97F29F65E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A4C91C-A2EC-44C9-9C8A-0B97F29F65E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7A0562-0C11-4EBC-9909-391FCC14CFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7A0562-0C11-4EBC-9909-391FCC14CFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7A0562-0C11-4EBC-9909-391FCC14CFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7A0562-0C11-4EBC-9909-391FCC14CFAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF86D45-F8D3-4B43-9DEB-35CFC9053759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF86D45-F8D3-4B43-9DEB-35CFC9053759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF86D45-F8D3-4B43-9DEB-35CFC9053759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF86D45-F8D3-4B43-9DEB-35CFC9053759}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2CCBA9A-205C-4A9B-8BA5-9908A8AFC4FD} = {8426765A-82B1-41E3-82BC-DECA4854404F}
+		{B3D5CF2A-C663-4679-8B94-DED9896CD56E} = {8426765A-82B1-41E3-82BC-DECA4854404F}
+		{BA931CB7-A524-48EB-B0B4-DACF0E5BE8C4} = {8426765A-82B1-41E3-82BC-DECA4854404F}
+		{F3A4C91C-A2EC-44C9-9C8A-0B97F29F65E0} = {D2CCBA9A-205C-4A9B-8BA5-9908A8AFC4FD}
+		{9A7A0562-0C11-4EBC-9909-391FCC14CFAF} = {B3D5CF2A-C663-4679-8B94-DED9896CD56E}
+		{7AF86D45-F8D3-4B43-9DEB-35CFC9053759} = {BA931CB7-A524-48EB-B0B4-DACF0E5BE8C4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F861F21C-5319-4AC8-A69E-7FF2B18EA47F}
+	EndGlobalSection
+EndGlobal
