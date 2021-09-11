@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SalesTaxes.API</name>
+    </assembly>
+    <members>
+        <member name="M:SalesTaxes.API.Controllers.SalesController.CalculateSale(System.Collections.Generic.IEnumerable{SalesTaxes.API.ViewModel.SaleItemViewModel})">
+            <summary>
+            Calculate the total value and taxes for a sale
+            </summary>
+            <returns>An action result of a sale and its items</returns>
+            <response code="200">Sale calculate successfully</response>
+            <response code="400">Some of the items data are not correct</response>
+        </member>
+    </members>
+</doc>
