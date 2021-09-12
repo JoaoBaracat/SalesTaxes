@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SalesTaxes.API.ViewModel;
-using SalesTaxes.Domain.Entities;
+using SalesTaxes.Domain.ValueObjects;
 
 namespace SalesTaxes.API.Profiles
 {

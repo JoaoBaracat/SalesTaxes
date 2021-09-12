@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  salestaxes.api:
+    image: ${DOCKER_REGISTRY-}salestaxesapi
+    build:
+      context: .
+      dockerfile: src/SalesTaxes.API/Dockerfile

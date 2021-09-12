@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
-using SalesTaxes.Domain.Entities;
+using SalesTaxes.Domain.ValueObjects;
 using SalesTaxes.Domain.Notifications;
 using System.Linq;
 
@@ -15,11 +15,11 @@ namespace SalesTaxes.App.Apps
             _notifier = notifier;
         }
 
-        protected bool Validate<TValidator, TEntity>(TValidator validator, TEntity entity)
-            where TValidator : AbstractValidator<TEntity>
-            where TEntity : Entity
+        protected bool Validate<TValidator, TValueObject>(TValidator validator, TValueObject valueObject)
+            where TValidator : AbstractValidator<TValueObject>
+            where TValueObject : ValueObject
         {
-            var validationResult = validator.Validate(entity);
+            var validationResult = validator.Validate(valueObject);
 
             Notify(validationResult);
 

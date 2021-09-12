@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace SalesTaxes.Domain.Entities.Validation
+namespace SalesTaxes.Domain.ValueObjects.Validation
 {
     public class SaleItemValidation : AbstractValidator<SaleItem>
     {

@@ -1,6 +1,6 @@
 ﻿using SalesTaxes.Domain.Apps;
-using SalesTaxes.Domain.Entities;
-using SalesTaxes.Domain.Entities.Validation;
+using SalesTaxes.Domain.ValueObjects;
+using SalesTaxes.Domain.ValueObjects.Validation;
 using SalesTaxes.Domain.Notifications;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,25 +9,22 @@ namespace SalesTaxes.App.Apps
 {
     public class SalesApp : AppBase, ISalesApp
     {
+        private readonly INotifier _notifier;
+        private Sale _sale;
+
         public SalesApp(INotifier notifier) : base(notifier)
         {
+            _notifier = notifier;
         }
 
         public Sale CalculateSale(IEnumerable<SaleItem> saleItems)
         {
-            var sale = new Sale();
+            _sale = new Sale();
             var groupedSaleItems = saleItems
                 .GroupBy(x => (x.Description, x.Category, x.Origin));
 
             foreach (var group in groupedSaleItems)
             {
-                foreach (var item in group)
-                {
-                    if (!Validate(new SaleItemValidation(), item))
-                    {
-                        return null;
-                    }
-                }
                 var groupedItem = new SaleItem(
                     group.FirstOrDefault().Description,
                     group.Sum(g => g.Quantity),
@@ -36,20 +33,30 @@ namespace SalesTaxes.App.Apps
                     group.FirstOrDefault().Category
                  );
 
+                if (!Validate(new SaleItemValidation(), groupedItem))
+                {
+                    return null;
+                }
+
                 groupedItem.CalculateSalesPrice();
                 groupedItem.CalculateTotalPrice();
-                sale.SaleItems.Add(groupedItem);
+                _sale.SaleItems.Add(groupedItem);
             }
 
-            sale.CalculateTaxTotals();
-            sale.CalculateTotalPrice();
+            _sale.CalculateTotalTaxes();
+            _sale.CalculateTotalPrice();
 
-            if (sale.RoundedPrice > 0)
+            FixRoundedPrice();
+
+            return _sale;
+        }
+
+        private void FixRoundedPrice()
+        {
+            if (_sale.RoundedPrice > 0)
             {
-                saleItems.Where(x => x.SalePrice > x.UnitPrice).LastOrDefault().FixTaxPrice(sale.RoundedPrice);
+                _sale.SaleItems.Where(x => x.SalePrice > x.UnitPrice).LastOrDefault().FixTaxPrice(_sale.RoundedPrice);
             }
-
-            return sale;
         }
     }
 }

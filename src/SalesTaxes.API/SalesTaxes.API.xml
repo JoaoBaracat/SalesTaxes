@@ -8,9 +8,10 @@
             <summary>
             Calculate the total value and taxes for a sale
             </summary>
-            <returns>An action result of a sale and its items</returns>
+            <returns>An action result of a sale and its items with the total price and the taxes</returns>
             <response code="200">Sale calculate successfully</response>
             <response code="400">Some of the items data are not correct</response>
+            <response code="500">The server could not process the sale</response>
         </member>
     </members>
 </doc>

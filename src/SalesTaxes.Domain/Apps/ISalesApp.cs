@@ -1,4 +1,4 @@
-﻿using SalesTaxes.Domain.Entities;
+﻿using SalesTaxes.Domain.ValueObjects;
 using System.Collections.Generic;
 
 namespace SalesTaxes.Domain.Apps

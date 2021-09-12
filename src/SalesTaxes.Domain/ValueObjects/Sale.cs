@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SalesTaxes.Domain.Entities
+namespace SalesTaxes.Domain.ValueObjects
 {
     public class Sale
     {
@@ -16,11 +16,11 @@ namespace SalesTaxes.Domain.Entities
             SaleItems = new List<SaleItem>();
         }
 
-        public void CalculateTaxTotals()
+        public void CalculateTotalTaxes()
         {
             var originalTaxPrice = Math.Round(SaleItems.Sum(x => (x.SalePrice - x.UnitPrice) * x.Quantity), 2);
             TotalSalesTaxes = RoundingUpTaxes(originalTaxPrice);
-            RoundedPrice = TotalSalesTaxes - originalTaxPrice;
+            RoundedPrice = Math.Round(TotalSalesTaxes - originalTaxPrice, 2);
         }
 
         public void CalculateTotalPrice()

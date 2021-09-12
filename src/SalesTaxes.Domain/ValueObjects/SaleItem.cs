@@ -2,9 +2,9 @@
 using static SalesTaxes.Domain.Enums.CategoryEnum;
 using static SalesTaxes.Domain.Enums.OriginEnum;
 
-namespace SalesTaxes.Domain.Entities
+namespace SalesTaxes.Domain.ValueObjects
 {
-    public class SaleItem : Entity
+    public class SaleItem : ValueObject
     {
         public string Description { get; set; }
         public int Quantity { get; set; }
@@ -29,15 +29,13 @@ namespace SalesTaxes.Domain.Entities
 
             if (Category != Category.Books && Category != Category.Food && Category != Category.MedicalProducts)
             {
-                SalePrice += UnitPrice * 0.10;
+                SalePrice += Math.Round(UnitPrice * 0.10, 2);
             }
 
             if (Origin == Origin.Imported)
             {
-                SalePrice += UnitPrice * 0.05;
+                SalePrice += Math.Round(UnitPrice * 0.05, 2);
             }
-
-            SalePrice = Math.Round(SalePrice, 2);
         }
 
         public void FixTaxPrice(double roundedPrice)
