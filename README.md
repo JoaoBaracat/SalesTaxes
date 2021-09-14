@@ -31,6 +31,10 @@ http://localhost:5000/swagger/index.html
 or
 http://localhost:8000/swagger/index.html
 
+**Another option to run it, you can unzip the publish.zip in the root of this repo and execute the file SalesTaxes.API.exe**
+
+**After that, you can access the link http://localhost:5000/swagger/index.html**
+
 ## Payloads
 Here you have a suggested example to test the calculation functionality request and its response:
 
